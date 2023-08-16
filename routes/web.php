@@ -21,7 +21,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->middleware('auth');;
 Route::get('/pengguna', [UserController::class, 'show'])->middleware('auth');;
-Route::get('/tambahpengguna', [UserController::class, 'create'])->middleware('auth');;
+Route::get('/tambahpengguna', [UserController::class, 'create']);
 Route::get('/deletepengguna/{id}', [UserController::class, 'delete'])->middleware('auth');;
 Route::get('/editpengguna/{id}', [UserController::class, 'edit'])->middleware('auth');;
 Route::post('/tambahpenggunas', [UserController::class, 'store']);

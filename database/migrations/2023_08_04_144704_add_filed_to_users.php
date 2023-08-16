@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToPegawais extends Migration
+class AddFiledToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddColumnToPegawais extends Migration
      */
     public function up()
     {
-        Schema::table('pegawais', function (Blueprint $table) {
-            $table->string('no_pegawai')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('email_verified_at');
+            $table->dropColumn('email');
         });
     }
 
@@ -25,7 +26,7 @@ class AddColumnToPegawais extends Migration
      */
     public function down()
     {
-        Schema::table('pegawais', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
